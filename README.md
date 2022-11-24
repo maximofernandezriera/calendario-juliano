@@ -33,11 +33,41 @@ Este podría ser:
 
 
         Funcion diaj <- Calcular_Dia_Juliano(day,month,year)
-          Definir mes como Entero;
-          definir diaj como Entero;
-          diaj<-0;
+          Definir mes como Entero
+          definir diaj como Entero
+          diaj<-0
           Para mes<-1 hasta month-1 Hacer
-            diaj<-diaj + DiasDelMes(mes,year);
+            diaj<-diaj + DiasDelMes(mes,year)
           FinPara
-          diaj <- diaj + day;
+          diaj <- diaj + day
+        FinFuncion
+        
+5. Seguidamente debemos abordar la función DiasDelMes que ecibe un mes y un año y devuelve el número de días que tiene ese mes en ese año. Necesita la función EsBisiesto. Parámetros de entrada: mes y año y devuelve los días del mes en ese año.
+
+        Funcion dias <- DiasDelMes(month,year)
+            Definir dias Como Entero;
+            Segun month Hacer
+                1,3,5,7,8,10,12:
+                    dias<-31
+                4,6,9,11:
+                    dias<-30
+                2: //El mes de febrero depende de si el año es bisiesto
+                    Si EsBisiesto(year) Entonces
+                        dias<-29
+                    SiNo
+                        dias<-28
+                    FinSi
+            FinSegun
+        FinFuncion
+        
+6. Finalmente atacamos a la función EsBisiesto que recibe un año y devuelve si es o no bisiesto. Parámetros de entrada: año y debe devolver alor lógico (booleano) indicando si es bisiesto (Verdadero) o no (Falso).
+//################################################################################
+
+        Funcion bisiesto <- EsBisiesto(year)
+            Definir bisiesto como Logico
+            Si (year % 4 = 0 Y NO (year % 100 = 0)) O year % 400 = 0 Entonces
+                bisiesto <- Verdadero
+            SiNo
+                bisiesto <- Falso
+            FinSi
         FinFuncion
