@@ -21,11 +21,11 @@ Este podría ser:
 3. Ahora deberíamos abordar el LeerFecha: este debería ser un Procedimiento que lee por teclado el día, mes y el año y lo devuelve como parámetro de entrada y salida: día, mes y año. Aquí mucho ojo con el paso por valor y paso por referencia.
 
         Funcion LeerFecha(day Por Referencia,month Por Referencia, year Por Referencia)
-          Escribir Sin Saltar "Día:"
-          Leer day;
-          Escribir Sin Saltar "Mes:"
-          Leer month;
-          Escribir Sin Saltar "Año:"
+          Escribir "Día:"
+          Leer day
+          Escribir "Mes:"
+          Leer month
+          Escribir "Año:"
           Leer year
         FinFuncion
  
@@ -64,7 +64,7 @@ Este podría ser:
 
         Funcion bisiesto <- EsBisiesto(year)
             Definir bisiesto como Logico
-            Si (year % 4 = 0 Y NO (year % 100 = 0)) O year % 400 = 0 Entonces
+            Si (year mod 4 = 0 Y NO (year mod 100 = 0)) O year mod 400 = 0 Entonces
                 bisiesto <- Verdadero
             SiNo
                 bisiesto <- Falso
