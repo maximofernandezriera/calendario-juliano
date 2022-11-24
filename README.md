@@ -61,7 +61,6 @@ Este podría ser:
         FinFuncion
         
 6. Finalmente atacamos a la función EsBisiesto que recibe un año y devuelve si es o no bisiesto. Parámetros de entrada: año y debe devolver alor lógico (booleano) indicando si es bisiesto (Verdadero) o no (Falso).
-//################################################################################
 
         Funcion bisiesto <- EsBisiesto(year)
             Definir bisiesto como Logico
